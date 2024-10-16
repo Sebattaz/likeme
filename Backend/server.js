@@ -13,7 +13,7 @@ app.get("/posts", async (req, res) => {
   res.json(likes);
 });
 
-app.post("/", async (req, res) => {
+app.post("/posts", async (req, res) => {
   const { titulo, img, descripcion, likes } = req.body;
   await postData(titulo, img, descripcion, likes);
   res.send("LIKE AGREGADO");

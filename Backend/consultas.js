@@ -24,12 +24,12 @@ const getData = async () => {
   return likes.rows;
 };
 
-const postData = async (titulo, img, descripcion, likes)=>{
-    const add = "INSERT INTO posts (titulo, img, descripcion, likes) VALUES ($1, $2, $3, $4)";
-    const values = [titulo, img, descripcion, likes];
-    const result = await pool.query(add, values);
-    console.log("Dato insertado", result.rowCount);
-}   
-
+const postData = async (titulo, img, descripcion, likes) => {
+  const add =
+    "INSERT INTO posts (titulo, img, descripcion, likes) VALUES ($1, $2, $3, $4)";
+  const values = [titulo, img, descripcion, likes];
+  const result = await pool.query(add, values);
+  console.log("Dato insertado", result.rowCount);
+};
 
 module.exports = { getData, postData };
